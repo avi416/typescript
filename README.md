@@ -1,142 +1,96 @@
-# TaskWeb List Application
 
-This project is a TypeScript-based **TaskWeb List application** designed as part of a software engineering assignment. It showcases advanced TypeScript features, integration with external APIs, and React-based SPA functionality.
+# Task Manager Application
 
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Integration](#api-integration)
-- [Project Structure](#project-structure)
-- [Contribution](#contribution)
+## Overview
+
+This is a simple **Task Manager Application** built using **React and TypeScript**. It allows users to:
+
+- Add tasks with descriptions.
+- Mark tasks as completed.
+- Delete tasks.
+- Filter tasks (All, Completed, Not Completed).
+- View motivational quotes that update every 20 seconds.
 
 ## Features
 
-1. **Task Management**:
-   - Add new tasks with a name and optional description.
-   - Mark tasks as completed or uncompleted with a visual indication (strikethrough).
-   - Delete tasks from the list.
+✅ **Add tasks** with a title and optional description.
+✅ **Mark tasks as done** using a button.
+✅ **Delete tasks** to remove them from the list.
+✅ **Filter tasks** to view only completed or pending ones.
+✅ **Persistent storage** using `localStorage`.
+✅ **Live quotes** updating every 20 seconds.
 
-2. **Task Filtering**:
-   - View all tasks.
-   - Filter tasks to show only completed or uncompleted tasks.
+## Installation & Setup
 
-3. **Persistent Storage**:
-   - Store tasks using `LocalStorage`, ensuring data is retained across page reloads.
+### Prerequisites
 
-4. **Motivational Quotes**:
-   - Fetch and display a motivational quote above the task list from an external API.
+Make sure you have **Node.js** and **npm/yarn** installed.
 
-5. **Responsive Design**:
-   - Simple and user-friendly UI with basic styling.
+### Clone the Repository
 
-## Technologies Used
-
-- **TypeScript**: Ensuring type safety and robust code.
-- **React**: For building the user interface.
-- **Vite**: For a fast development environment.
-- **Tailwind CSS**: For styling.
-- **API Integration**: Using `fetch` or `axios` to interact with external APIs.
-
-## Installation
-
-To get started, follow these steps:
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd <repository-folder>
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
-
-## Usage
-
-### Adding a Task
-1. Enter a task name in the input field.
-2. Optionally, add a description.
-3. Click the **Add Task** button to add it to the list.
-
-### Managing Tasks
-- Mark tasks as completed by clicking on them.
-- Delete tasks using the delete button.
-
-### Filtering Tasks
-- Use the provided filter buttons (**All**, **Completed**, **Uncompleted**) to filter tasks.
-
-### Motivational Quotes
-- A motivational quote will be displayed at the top of the page, fetched from an external API.
-
-## API Integration
-
-The application integrates with the [Quotable API](http://api.quotable.io/random) to fetch motivational quotes. 
-
-### Example API Response:
-```json
-{
-  "content": "The only limit to our realization of tomorrow is our doubts of today.",
-  "author": "Franklin D. Roosevelt"
-}
+```sh
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
 ```
 
-### Error Handling:
-- The app handles errors gracefully and provides feedback if the API call fails.
+### Install Dependencies
+
+```sh
+npm install
+```
+
+OR using Yarn:
+
+```sh
+yarn install
+```
+
+### Run the Project
+
+Start the development server:
+
+```sh
+npm start
+```
+
+OR using Yarn:
+
+```sh
+yarn start
+```
+
+Then, open **`http://localhost:5173/`** in your browser.
 
 ## Project Structure
 
 ```
-src/
-|-- components/
-|   |-- TaskList.tsx
-|   |-- TaskItem.tsx
-|   |-- QuoteBox.tsx
-|-- App.tsx
-|-- index.tsx
-|-- styles/
-|   |-- tailwind.css
+📂 src
+ ┣ 📂 components
+ ┃ ┣ 📜 TaskForm.tsx        # Form for adding new tasks
+ ┃ ┣ 📜 TaskList.tsx        # Displays the list of tasks
+ ┃ ┣ 📜 TaskItem.tsx        # Individual task component
+ ┃ ┣ 📜 FilterButtons.tsx   # Filtering tasks
+ ┃ ┗ 📜 App.tsx             # Main application
+ ┣ 📂 interfaces
+ ┃ ┗ 📜 Task.ts             # Task interface
+ ┣ 📜 index.tsx             # Entry point
+ ┣ 📜 App.tsx               # Root component
 ```
 
-- **`components/`**: Contains reusable React components like `TaskList` and `QuoteBox`.
-- **`App.tsx`**: Main application component.
-- **`styles/`**: Contains styling files.
+## Technologies Used
 
-## Contribution
-
-If you'd like to contribute:
-
-1. Fork the repository.
-2. Create a new feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add feature description"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a pull request.
+- **React** (Functional Components, Hooks)
+- **TypeScript** (Static Typing)
+- **Bootstrap** (Styling & UI Design)
+- **LocalStorage** (Persistent data storage)
+- **Fetch API** (Fetching motivational quotes)
 
 ## License
 
-This project is for educational purposes and is not licensed for production use.
+This project is licensed under the **MIT License**.
 
 ---
 
-Enjoy building and extending this project!
+✨ **Developed by Avi Mahari**🚀
+
+
