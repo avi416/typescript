@@ -11,18 +11,38 @@ const App: React.FC = () => {
   );
   const [filter, setFilter] = useState("all");
 
+  /**
+   * Saves the tasks to local storage whenever they are updated.
+   */
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  /**
+   * Adds a new task to the task list.
+   * @param {Task} task - The task to be added.
+   */
   const addTask = (task: Task) => setTasks([...tasks, task]);
+
+  /**
+   * Toggles the completion status of a task.
+   * @param {string} id - The ID of the task to toggle.
+   */
   const toggleTask = (id: string) => {
     setTasks(tasks.map(task => (task.id === id ? { ...task, completed: !task.completed } : task)));
   };
+
+  /**
+   * Deletes a task from the task list.
+   * @param {string} id - The ID of the task to delete.
+   */
   const deleteTask = (id: string) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
+  /**
+   * Filters the task list based on the selected filter.
+   */
   const filteredTasks = tasks.filter(task =>
     filter === "all" ? true : filter === "completed" ? task.completed : !task.completed
   );

@@ -1,4 +1,3 @@
-// קובץ: components/TaskList.tsx
 import React, { useState, useEffect } from "react";
 import TaskItem from "./TaskItem";
 import { Task } from "../interfaces/Task";
@@ -14,6 +13,10 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, toggleTask, deleteTask }) =>
   const [quote, setQuote] = useState<Quote | null>(null);
   const [animation, setAnimation] = useState("animate__fadeInLeft");
 
+  /**
+   * Fetches an inspirational quote from an external API and updates the state.
+   * The quote refreshes every 20 seconds.
+   */
   useEffect(() => {
     const fetchQuote = async () => {
       try {
@@ -59,17 +62,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, toggleTask, deleteTask }) =>
         </thead>
         <tbody>
           {tasks.map((task) => (
-            <tr key={task.id}>
-              <td className="p-3 w-50">
-                <TaskItem task={task} toggleTask={toggleTask} deleteTask={deleteTask} />
-              </td>
-              <td className="p-3 w-25">
-                {task.description || "No description"}
-              </td>
-              <td className="text-center w-25">
-                <button className="btn btn-sm btn-danger" onClick={() => deleteTask(task.id)}>Delete</button>
-              </td>
-            </tr>
+            <TaskItem key={task.id} task={task} toggleTask={toggleTask} deleteTask={deleteTask} />
           ))}
         </tbody>
       </table>
